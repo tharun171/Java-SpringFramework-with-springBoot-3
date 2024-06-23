@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <!-- scope="prototype" -->
+    <bean id="developer1" class="com.tharun.SpringFrameworkDemo.SetterInjection.Developer">
+		<!-- Setter Injection for age -->
+		<property name="age" value="18"></property>
+		<!-- Reference to class object -->
+		<property name="lap" ref="DesktopBean1"></property>
+	</bean>
+	
+	<bean id="developer2" class="com.tharun.SpringFrameworkDemo.SetterInjection.Developer">
+	</bean>
+	
+	<bean id="laptopBean1" class="com.tharun.SpringFrameworkDemo.SetterInjection.Laptop">
+		<!-- Setter Injection -->
+		<property name="name" value="Asus"></property>
+	</bean>
+	<bean id="laptopBean2" class="com.tharun.SpringFrameworkDemo.SetterInjection.Laptop">
+		<!-- Setter Injection -->
+		<property name="name" value="HP"></property>
+	</bean>
+	
+	<bean id="DesktopBean1" class="com.tharun.SpringFrameworkDemo.SetterInjection.Desktop">
+		<!-- Setter Injection -->
+		<property name="name" value="Assembled"></property>
+	</bean>
+	
+	
+
+</beans>

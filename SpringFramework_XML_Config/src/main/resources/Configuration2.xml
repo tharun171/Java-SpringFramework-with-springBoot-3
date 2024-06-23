@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="developer2" class="com.tharun.SpringFrameworkDemo.SetterInjection.Developer">
+	</bean>
+	
+	<bean id="laptopBean1" class="com.tharun.SpringFrameworkDemo.SetterInjection.Laptop">
+		<!-- Setter Injection -->
+		<property name="name" value="Asus"></property>
+	</bean>
+	<bean id="laptopBean2" class="com.tharun.SpringFrameworkDemo.SetterInjection.Laptop">
+		<!-- Setter Injection -->
+		<property name="name" value="HP"></property>
+	</bean>
+	
+    
+    
+    
+<!-- CONSTRUCTOR injection for Architect -->
+	<bean id="architectConst1" class="com.tharun.SpringFrameworkDemo.ConstructorInjection.Architect">
+		<!-- Constructor injection, order based on constructor -->
+		<constructor-arg value="tarun"></constructor-arg>
+		<constructor-arg value="Arch"></constructor-arg>
+		<constructor-arg value="19"></constructor-arg>
+		<constructor-arg value="99999"></constructor-arg>
+		<constructor-arg ref="laptopBean1"></constructor-arg>
+	</bean>
+	
+	<!-- CONSTRUCTOR injection for Architect -->
+	<bean id="architectConst2" class="com.tharun.SpringFrameworkDemo.ConstructorInjection.Architect">
+		<!-- Constructor injection, index start with 0 -->
+		<constructor-arg value="kumar" index="2"></constructor-arg>
+		<constructor-arg value="Arch" index="1"></constructor-arg>
+		<constructor-arg value="22" index="0"></constructor-arg>
+		<constructor-arg value="89999" index="3"></constructor-arg>
+		<constructor-arg ref="laptopBean2" index="4"></constructor-arg>
+	</bean>
+	
+	<!-- CONSTRUCTOR injection for Architect -->
+	<bean id="architectConst3" class="com.tharun.SpringFrameworkDemo.ConstructorInjection.Architect">
+		<!-- Constructor injection, by var name in class -->
+		<constructor-arg value="thulasi" name="name"></constructor-arg>
+		<constructor-arg value="Arch" name="role"></constructor-arg>
+		<constructor-arg value="32" name="age"></constructor-arg>
+		<constructor-arg value="98999" name="salary"></constructor-arg>
+		<constructor-arg ref="laptopBean2" name="lap"></constructor-arg>
+	</bean>
+	
+</beans>

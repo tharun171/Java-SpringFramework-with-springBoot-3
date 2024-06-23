@@ -1,0 +1,19 @@
+
+
+By Default, spring framework follows Singleton Object creation pattern
+
+Only one Object is created and its instances are shared
+
+
+SETTER INJECTION
+CONSTRUCTOR INJECTION - name,index,type(if all datatypes are unique)
+- in constructor injection, we can follow same order of arguments as in constructor
+AUTOWIRE TYPES - byName,byType
+
+to remove ambiguity while using byType
+when we have 2 beans of same type
+we can resolve it using primary=true to wanted bean
+This bean will be binded
+
+LAZY-init = true
+object will be created when we ask for it.

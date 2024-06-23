@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- Autowire BYNAME -->
+<!--  as per the name in class declaration -->  
+<!-- Here Computer is written as comp --> 
+<!-- 
+<bean id="developer1" class="com.tharun.SpringFrameworkDemo.Autowiring.Developer" autowire="byName">
+	<property name="name" value="zach"></property>
+</bean>  
+ -->
+ 
+ <!-- Autowire BYTYPE -->
+ <!-- 
+<bean id="developer1" class="com.tharun.SpringFrameworkDemo.Autowiring.Developer" autowire="byType">
+	<property name="name" value="kumar"></property>
+</bean> 
+ -->
+ 
+ <!-- WHEN we have 2 types, we give primary=true so it will be taken -->
+<bean id="developer1" class="com.tharun.SpringFrameworkDemo.Autowiring.Developer" autowire="byType">
+	<property name="name" value="kumar"></property>
+</bean> 
+
+
+
+<!--  here we gave id as comp -->
+<bean id="comp" class="com.tharun.SpringFrameworkDemo.SetterInjection.Laptop" lazy-init="true">
+	<property name="name" value="Mach"></property>
+</bean>
+
+<bean id="comp1" class="com.tharun.SpringFrameworkDemo.SetterInjection.Laptop" primary="true" lazy-init="true">
+	<property name="name" value="Asus"></property>
+</bean>
+
+
+<!-- INNER BEAN -->
+<bean id="developer2" class="com.tharun.SpringFrameworkDemo.Autowiring.Developer" autowire="byType">
+	<property name="name" value="Thulasi"></property>
+	<!-- name is var name in Developer class -->
+	<property name="comp">
+		<!-- comp is interface, lap and desktop are implementation -->
+		<bean id="laptopBean" class="com.tharun.SpringFrameworkDemo.SetterInjection.Laptop">
+			<property name="name" value="Rog"></property>
+		</bean>
+	</property>
+</bean> 
+
+
+        
+</beans>
