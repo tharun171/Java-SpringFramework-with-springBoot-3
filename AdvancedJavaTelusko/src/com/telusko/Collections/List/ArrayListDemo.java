@@ -1,4 +1,4 @@
-package com.telusko.Collections;
+package com.telusko.Collections.List;
 
 import java.util.ArrayList;
 import java.util.Collection;
