@@ -1,0 +1,6 @@
+
+Inversion of Control = achieved By DI(Dependency Injection)
+Objects are creaed by java Conatiner and Objects are given to us at Runtime.
+
+Autowiring - For Binding Classes
+Promotes Loose Coupling
