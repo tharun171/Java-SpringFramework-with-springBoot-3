@@ -1,0 +1,16 @@
+
+
+Spring mvc with maven project
+
+
+for controllers mvc annotations - used spring-webmvc jar
+for getter setters tostring - used lombok
+for converting jsp pages to servlet - used tomcat jasper
+
+used tomcat 10.1.8
+
+web.xml contains details of dispacther-servlet (tharun.xml)
+dispacther-servlet acts as a front end controller
+dispacther-servlet contains InternalResourceViewResolver
+
+in deployment assembly jsp file location should be added
