@@ -1,0 +1,13 @@
+
+
+@Controller
+@RequestMapping
+@GetMapping
+@RequestParam
+
+${} Spel Spring expression langauge
+
+@ModelAttribute at method parameter level - to get values from view
+@ModelAttribute at method level -  to send values to view
+
+application.properties to set view names
