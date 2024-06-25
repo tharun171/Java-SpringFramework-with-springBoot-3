@@ -1,4 +1,4 @@
-package com.telusko.Collections;
+package com.telusko.Collections.conversions;
 
 import java.util.ArrayList;
 import java.util.HashSet;
