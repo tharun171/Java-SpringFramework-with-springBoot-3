@@ -1,0 +1,9 @@
+
+
+
+Spring data JPA - its an interface
+
+have methods in repository
+those methods are pre-built, supported by spring data jpa
+method names are based on variable names
+
