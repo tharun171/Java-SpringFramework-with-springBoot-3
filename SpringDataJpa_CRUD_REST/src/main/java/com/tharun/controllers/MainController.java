@@ -1,7 +1,11 @@
 package com.tharun.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -66,5 +70,30 @@ public class MainController {
 		System.out.println("inside deleteFresherDetails - controller");
 		Integer noOfRowsUpdated = service.deleteFresherDetails(userEnteredId);
 		return new ResponseEntity<String>("no of rows updated "+noOfRowsUpdated,HttpStatus.GONE);
+	}
+	
+	//getAll
+	@GetMapping("/Fresher/")
+	public ResponseEntity<List<FresherBean>> getAllFreshers()
+	{
+		System.out.println("inside get All Freshers");
+		List<FresherBean> list = service.getAllFresher();
+		System.out.println(list);
+		return new ResponseEntity<List<FresherBean>>(list,HttpStatusCode.valueOf(200));
+	}
+	
+	//content will be sent based on user input - json or xml 
+	//by default we will make it xml
+	@GetMapping("Fresher/format:{type}")
+	public ResponseEntity<List<FresherBean>> getAllFreshers2(@PathVariable("type") String formatType)
+	{
+		System.out.println("inside get All Freshers");
+		List<FresherBean> list = service.getAllFresher();
+		if(formatType.equalsIgnoreCase("json"))
+			return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(list);
+		else if(formatType.equalsIgnoreCase("xml"))
+			return ResponseEntity.ok().contentType(MediaType.APPLICATION_XML).body(list);
+		else
+			return ResponseEntity.ok().contentType(MediaType.APPLICATION_XML).body(list);		
 	}
 }

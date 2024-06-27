@@ -1,5 +1,8 @@
 package com.tharun.RepositoryDAO;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -73,6 +76,20 @@ public class ProjecDaoImpl implements ProjectDao{
 			repo.delete(entity);
 			return 1;
 		}
+	}
+
+	@Override
+	public List<FresherBean> getAllFresher() {
+		System.out.println("inside get All");
+		List<FresherEntity> list = repo.findAll();
+		List<FresherBean> listBean = new ArrayList<FresherBean>();
+		for(FresherEntity entity:list)
+		{
+			FresherBean bean = new FresherBean();
+			BeanUtils.copyProperties(entity, bean);
+			listBean.add(bean);
+		}
+		return listBean;
 	}
 	
 	
