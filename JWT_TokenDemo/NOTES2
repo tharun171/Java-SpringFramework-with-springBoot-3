@@ -1,0 +1,20 @@
+
+
+
+
+//all api's doesnot work publicly
+
+//use localhost:9090/register  to create a user
+//should get 200 ok - created
+//after creating login using
+
+//use localhost:9090/login to login
+//when logged in you will get a jwt token
+
+//use the token, we gave 3 mins so 3 mins it will work
+//give localhost/users without token and notice we get 403
+//in postman, Authorization give BeareToken as token we got
+//give localhost/users notice we get all users in db
+
+//without the token, no link api's works
+//and after 2 minutes, token gets expired

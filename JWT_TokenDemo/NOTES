@@ -1,0 +1,33 @@
+
+
+//Not added to github
+
+//LEARNINGS
+
+Add spring-boot-starter-security in dependency
+spring will provide password everytime we restart the application
+spring will provide the default login page
+by default username will be user
+
+
+setting username and password manualy
+This approach sets all users have same username and password
+values are hardcoded in application.properties
+
+
+used csrf token to data post (data manipulation operation)
+using another site (postman) - csrf
+we got the CSRF attribute using HttpServletRequest
+see StudentController - csrf method
+
+
+disabling csrf
+making app stateless - session is not maintained
+setting our own configuration using securityconfig java class
+
+
+//SEE security config - requestMatchers().permitAll()
+
+
+
+
