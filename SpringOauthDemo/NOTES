@@ -1,0 +1,11 @@
+
+
+
+spring oauth demo
+oauth = open authorization
+
+
+we add a dependency in pom.xml for obtaining oAuth
+Using this, we can login using google link
+or we can login using github profile
+
